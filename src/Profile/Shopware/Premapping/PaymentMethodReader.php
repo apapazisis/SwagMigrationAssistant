@@ -97,7 +97,7 @@ class PaymentMethodReader extends AbstractPremappingReader
             return [];
         }
 
-        $preMappingData = $gateway->readTable($migrationContext, 's_core_paymentmeans');
+        $preMappingData = $gateway->readTable($migrationContext, 's_core_paymentmeans', ['active' => 1]);
 
         $entityData = [];
         foreach ($preMappingData as $data) {
